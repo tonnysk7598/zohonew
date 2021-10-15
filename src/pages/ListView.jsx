@@ -7,10 +7,10 @@ export default class ListView extends Component {
   render() {
     const { contacts } = this.props;
     return (
-      <div style={{ marginTop: '2%'}}>
+      <div style={{ marginTop: '2%' }}>
         {contacts.length ? (
-            <Table>
-              <thead>
+          <Table>
+            <thead>
               <tr>
                 <th>#</th>
                 <th>First Name</th>
@@ -19,17 +19,17 @@ export default class ListView extends Component {
               </tr>
             </thead>
             <tbody>
-            {contacts.map((contact, i) => (            
-              <tr key={i}>
-                <th>{i+1}</th>
-                <td>{capitalize(contact.contact_name)}</td>
-                <td>{contact.mobile || '---'}</td>
-                <td>{capitalize(contact.company_name) || '---'}</td>
-              </tr>
-            ))}
+              {contacts.map((contact, i) => (
+                <tr key={i}>
+                  <th>{i + 1}</th>
+                  <td>{capitalize(contact.contact_name)}</td>
+                  <td>{contact.mobile || '---'}</td>
+                  <td>{capitalize(contact.company_name) || '---'}</td>
+                </tr>
+              ))}
             </tbody>
-            </Table>
-        ) : 'No Record Found' }
+          </Table>
+        ) : 'No Record Found'}
       </div>
     )
   }
