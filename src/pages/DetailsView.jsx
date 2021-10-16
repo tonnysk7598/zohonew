@@ -23,7 +23,7 @@ export default class DetailsView extends Component {
     website: '',
   }
 
-  componentWillMount(props) {
+  componentDidMount(props) {
     const contact_id = this.props.match.params.id
     this.getContactInfoByContactId(contact_id);
   }

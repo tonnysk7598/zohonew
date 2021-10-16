@@ -22,7 +22,7 @@ export default class EditContact extends Component {
     website: '',
   }
 
-  componentWillMount(props) {
+  componentDidMount(props) {
     const contact_id = this.props.match.params.id
     this.getContactInfoByContactId(contact_id);
   }
@@ -232,7 +232,7 @@ export default class EditContact extends Component {
                             <Input
                               placeholder="xxxxx xxxxx"
                               type="text"
-                              maxlength="10"
+                              maxLength="10"
                               value={mobile}
                               onChange={(e) => this.setState({ mobile: e.target.value.replace(/\D/, '') })}
                             />

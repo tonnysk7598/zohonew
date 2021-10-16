@@ -42,18 +42,26 @@ export default class ListView extends Component {
       })
   }
 
+  getColor = (status) => {
+    if (status === 'active') {
+      return null
+    }
+    return 'red'
+  }
+
   render() {
     const { contacts } = this.props;
     return (
       <div style={{ marginTop: '2%' }}>
+        <p style={{ color: 'red' }}>*rows marked as red are 'Inactive'</p>
         {contacts.length ? (
           <Table>
             <thead>
               <tr>
                 <th>#</th>
-                <th>Contact Name</th>
-                <th>Phone</th>
-                <th>Company</th>
+                <th style={{ textAlign: 'center' }}>Contact Name</th>
+                <th style={{ textAlign: 'center' }}>Phone</th>
+                <th style={{ textAlign: 'center' }}>Company</th>
                 <th />
               </tr>
             </thead>
@@ -61,10 +69,10 @@ export default class ListView extends Component {
               {contacts.map((contact, i) => (
                 <tr key={i}>
                   <th>{i + 1}</th>
-                  <td>{capitalize(contact.contact_name)}</td>
-                  <td>{contact.mobile || '---'}</td>
-                  <td>{capitalize(contact.company_name) || '---'}</td>
-                  <td>
+                  <td style={{ textAlign: 'center', width: 'auto', color: this.getColor(contact.status) }}>{capitalize(contact.contact_name)}</td>
+                  <td style={{ textAlign: 'center', width: 'auto', color: this.getColor(contact.status) }}>{contact.mobile || '---'}</td>
+                  <td style={{ textAlign: 'center', width: 'auto', color: this.getColor(contact.status) }}>{capitalize(contact.company_name) || '---'}</td>
+                  <td style={{ textAlign: 'center', width: 'auto' }}>
                     <Link to={`/view/${contact.contact_id}`}><Button color="secondary">View</Button></Link>&ensp;&ensp;
                     <Link to={`/edit/${contact.contact_id}`}><Button color="primary">Edit</Button></Link>&ensp;&ensp;
                     <Link to={`/clone/${contact.contact_id}`}><Button color="success">Clone</Button></Link>&ensp;&ensp;
