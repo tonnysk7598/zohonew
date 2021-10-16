@@ -27,7 +27,7 @@ export default class MainPage extends Component {
     this.setState({ allContacts: contactsResponse, loading: false });
   }
 
-  routeChange=()=> {
+  routeChange = () => {
     let path = '/create';
     this.props.history.push(path);
   }

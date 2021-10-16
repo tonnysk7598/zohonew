@@ -80,7 +80,7 @@ export default class ListView extends Component {
             <Col md="8">
               <Card className="card-user">
                 <CardBody>
-                  <Row><Col><h2 style={{color:'blue'}}>No Record Found....!</h2></Col></Row>
+                  <Row><Col><h2 style={{ color: 'blue' }}>No Record Found....!</h2></Col></Row>
                 </CardBody>
               </Card>
             </Col>

@@ -156,23 +156,23 @@ export default class CreateContact extends Component {
                 </Form>
               </CardBody>
               <CardFooter className="text-muted">
-              <div style={{ float: 'right'}}>
-              <Button
-                className="btn-round"
-                color="secondary"
-                onClick={() => this.props.history.goBack()}
-              >
-                Close
-              </Button>&ensp;&ensp;&ensp;
-              <Button
-                className="btn-round"
-                color="primary"
-                onClick={() => this.submit()}
-              >
-                Creact Contact
-              </Button>
-            </div>
-            </CardFooter>
+                <div style={{ float: 'right' }}>
+                  <Button
+                    className="btn-round"
+                    color="secondary"
+                    onClick={() => this.props.history.goBack()}
+                  >
+                    Close
+                  </Button>&ensp;&ensp;&ensp;
+                  <Button
+                    className="btn-round"
+                    color="primary"
+                    onClick={() => this.submit()}
+                  >
+                    Creact Contact
+                  </Button>
+                </div>
+              </CardFooter>
             </Card>
           </Col>
           <Col md="2" />

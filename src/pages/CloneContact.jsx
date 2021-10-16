@@ -88,7 +88,7 @@ export default class CloneContact extends Component {
       firstName, lastName, salutationType, website,
     } = this.state;
     return (
-        <Container style={{ marginTop: '2%' }}>
+      <Container style={{ marginTop: '2%' }}>
         {loading ? (
           <Skeleton height={200} duration={2} />
         ) : (
@@ -188,9 +188,9 @@ export default class CloneContact extends Component {
                         </Col>
                       </Row>
                     </Form>
-                    </CardBody>
-                    <CardFooter>
-                    <div style={{ float: 'right'}}>
+                  </CardBody>
+                  <CardFooter>
+                    <div style={{ float: 'right' }}>
                       <Button
                         className="btn-round"
                         color="secondary"

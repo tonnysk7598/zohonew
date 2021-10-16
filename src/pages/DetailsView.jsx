@@ -64,8 +64,8 @@ export default class DetailsView extends Component {
     })
       .then((proceed) => {
         if (proceed) {
-            let path = `/edit/${contactId}`;
-            this.props.history.push(path);
+          let path = `/edit/${contactId}`;
+          this.props.history.push(path);
         }
       })
   }
@@ -103,7 +103,7 @@ export default class DetailsView extends Component {
             })
               .then(() => {
                 if (status === 'active') {
-                    localthis.history.goBack();
+                  localthis.history.goBack();
                 } else {
                   this.setState({ status: 'active' })
                 }
@@ -123,7 +123,7 @@ export default class DetailsView extends Component {
     } = this.state;
 
     return (
-        <Container style={{ marginTop: '2%' }}>
+      <Container style={{ marginTop: '2%' }}>
         {loading ? (
           <Skeleton height={200} duration={2} />
         ) : (
@@ -173,34 +173,34 @@ export default class DetailsView extends Component {
                           </FormGroup>
                         </Col>
                       </Row>
-                      </Form>
-                      </CardBody>
-                      <CardFooter>
-                      <div style={{ float: 'right'}}>
-                        <Button
-                          className="btn-round"
-                          color="secondary"
-                          onClick={() => this.props.history.goBack()}
-                        >
-                          Close
-                        </Button>&ensp;&ensp;
-                        <Button
-                          className="btn-round"
-                          color="primary"
-                          onClick={() => this.changeStatus()}
-                        >
-                          {status === 'active' ? 'Mark as In-Active' : 'Mark as Active'}
-                        </Button>&ensp;&ensp;
-                        <Button
-                          className="btn-round"
-                          color="primary"
-                          onClick={() => this.submit()}
-                          disabled={status === 'active' ? false : true}
-                        >
-                          Edit Contact
-                        </Button>
-                      </div>
-                      </CardFooter>
+                    </Form>
+                  </CardBody>
+                  <CardFooter>
+                    <div style={{ float: 'right' }}>
+                      <Button
+                        className="btn-round"
+                        color="secondary"
+                        onClick={() => this.props.history.goBack()}
+                      >
+                        Close
+                      </Button>&ensp;&ensp;
+                      <Button
+                        className="btn-round"
+                        color="primary"
+                        onClick={() => this.changeStatus()}
+                      >
+                        {status === 'active' ? 'Mark as In-Active' : 'Mark as Active'}
+                      </Button>&ensp;&ensp;
+                      <Button
+                        className="btn-round"
+                        color="primary"
+                        onClick={() => this.submit()}
+                        disabled={status === 'active' ? false : true}
+                      >
+                        Edit Contact
+                      </Button>
+                    </div>
+                  </CardFooter>
                 </Card>
               </Col>
               <Col md="2" />

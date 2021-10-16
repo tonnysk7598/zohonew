@@ -121,7 +121,7 @@ export default class EditContact extends Component {
             })
               .then(() => {
                 if (status === 'active') {
-                    localthis.history.goBack();
+                  localthis.history.goBack();
                 } else {
                   this.setState({ status: 'active' })
                 }
@@ -240,9 +240,9 @@ export default class EditContact extends Component {
                         </Col>
                       </Row>
                     </Form>
-                    </CardBody>
-                    <CardFooter className="text-muted">
-                    <div style={{ float: 'right'}}>
+                  </CardBody>
+                  <CardFooter className="text-muted">
+                    <div style={{ float: 'right' }}>
                       <Button
                         className="btn-round"
                         color="secondary"
@@ -266,7 +266,7 @@ export default class EditContact extends Component {
                         Update Contact
                       </Button>
                     </div>
-                    </CardFooter>
+                  </CardFooter>
                 </Card>
               </Col>
               <Col md="2" />

@@ -4,7 +4,7 @@ import { Card, CardBody, Row, Col } from "reactstrap";
 export default class ErrorPage extends Component {
   render() {
     return (
-        <div className="content">
+      <div className="content">
         <Row>
           <Col md="2" />
           <Col md="8">
