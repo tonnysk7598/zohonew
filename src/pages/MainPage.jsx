@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
-import { Button, Container } from 'reactstrap'
+import { Button, Col, Container, Row } from 'reactstrap'
 import Skeleton from 'react-loading-skeleton'
-import { withRouter  } from 'react-router-dom';
 
 import ListView from './ListView'
 
@@ -40,8 +39,15 @@ export default class MainPage extends Component {
         <Container style={{ marginTop: '2%' }}>
           {!loading ? (
             <React.Fragment>
-              <Button onClick={this.routeChange}>Create New</Button>
-              <ListView contacts={allContacts} />
+              <Row>
+                <Col lg={10}>
+                  <h1>All Contacts</h1>
+                </Col>
+                <Col lg={2}>
+                  <Button onClick={this.routeChange}>Create New</Button>
+                </Col>
+              </Row>
+              <ListView contacts={allContacts} getAllContacts={this.getAllContacts} />
             </React.Fragment>
           ) : (
             <React.Fragment>

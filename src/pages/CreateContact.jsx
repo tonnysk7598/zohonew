@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {
-  Button, Card, CardHeader, CardBody, CardTitle, FormGroup, Form, Input, Row, Col,
-  Badge, CardFooter,
+  Button, Card, CardHeader, CardBody, CardTitle,
+  FormGroup, Form, Input, Row, Col, CardFooter,
 } from "reactstrap";
 import swal from 'sweetalert';
 
@@ -44,7 +44,7 @@ export default class CreateContact extends Component {
         button: true,
       })
         .then(() => {
-          window.location = '/'
+          this.props.history.goBack();
         })
     } else {
       const errorMesage = JSON.parse(res.body);
@@ -146,7 +146,7 @@ export default class CreateContact extends Component {
                         <Input
                           placeholder="xxxxx xxxxx"
                           type="text"
-                          maxlength="10"
+                          maxLength="10"
                           value={mobile}
                           onChange={(e) => this.setState({ mobile: e.target.value.replace(/\D/, '') })}
                         />
@@ -156,7 +156,7 @@ export default class CreateContact extends Component {
                 </Form>
               </CardBody>
               <CardFooter className="text-muted">
-              <div className="text-right">
+              <div style={{ float: 'right'}}>
               <Button
                 className="btn-round"
                 color="secondary"
